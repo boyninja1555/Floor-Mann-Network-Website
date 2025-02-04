@@ -1,0 +1,53 @@
+---
+import "../styles/global.css"
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Page Metadata -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Floor Mann Network - {title}</title>
+	<meta name="description" content="Ever joined a Minecraft server network- but it's nothing like advertised? Ever tried to join survival- but there's a queue? Just try the Floor Mann Network instead! You even have the chance of playing Minecraft survival with the owner!" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Image Preloads -->
+	<link rel="preload" as="image" href="/img/banner.jpg" />
+
+	<!-- Resources -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="manifest" href="/site.webmanifest" />
+
+	<!-- Libraries -->
+	<script is:inline src="/lib/copytext-0_0_1.js" />
+</head>
+<body>
+	<main>
+		<nav id="navigation-bar-main" class="flex items-center justify-between px-[50px] bg-1 border-b-[1.5px] border-0 w-full h-[64px] top-0 left-0 fixed z-50">
+			<a href="/" class="non-link flex items-center gap-[10px] text-2xl h-[40px]">
+				<img src="/favicon.ico" alt="Logo" class="rounded-[8px] h-full" />
+				Floor Mann Network
+			</a>
+			
+			<ul id="navigation-bar-main-links" class="flex items-center gap-[15px]">
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+			</ul>
+		</nav>
+
+		<header id="header-main" class="py-[15px] bg-1-bg">
+			<div id="server-banner" class="mt-[100px] relative">
+				<h3 class="text-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute z-40">Floor Mann Network</h3>
+				<img src="/img/banner.jpg" alt="Server Banner" class="mx-auto w-[50%] z-30" style="filter: blur(3px) brightness(.5);" />
+			</div>
+		</header>
+		
+		<div id="wrapper-main">
+			<slot />
+		</div>
+	</main>
+</body>
+</html>
